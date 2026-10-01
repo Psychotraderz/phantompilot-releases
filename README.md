@@ -1,23 +1,42 @@
-# Production-Hardened Trading Bot
+# Phantom Pilot
 
-Audited & Remediated by AlphaAudit Studio.
+Phantom Pilot is a Windows desktop trading app. This repository only hosts the
+**installers and update files**. The source code is not published here.
 
-## Security & Safeguards Applied:
-- Automated hard stop-loss brackets on every order.
-- Conservative 3x leverage ceiling with 3% portfolio daily circuit breaker.
-- Client-side token-bucket rate limiting enabled to prevent HTTP 429 exchange bans.
-- Safe linear order scaling with exchange lot step precision rounding.
-- Encrypted environment variable ingestion for API credentials.
+## Download and install
 
-## Quick Start
-```bash
-# 1. Install dependencies
-pip install -r requirements.txt
+1. Open the [latest release](../../releases/latest).
+2. Download `PhantomPilot-Setup-<version>.exe`.
+3. Run it. The installer is per-user, so it does not need administrator rights.
 
-# 2. Configure credentials in .env
-cp .env.example .env
-# Fill in EXCHANGE_API_KEY and EXCHANGE_API_SECRET
+Windows SmartScreen may warn about a new download. Choose **More info → Run anyway**
+only if you downloaded the file from this repository's Releases page.
 
-# 3. Launch bot
-python bot.py
-```
+## Trial and licence
+
+- A new install runs as a **7-day trial** with every feature.
+- After the trial, the app keeps working in **paper trading only** (no live orders)
+  until a licence key is entered.
+- Enter your key under **Settings → Licence & updates**. Each key is tied to a
+  limited number of PCs.
+
+## Updates
+
+- The app checks this repository for new versions and shows them under
+  **Settings → Licence & updates**.
+- Every update is signed. The app checks the signature and the download before it
+  installs anything, and refuses files that fail the check.
+- The previous version is kept. If an update causes problems, run `rollback.cmd`
+  from the install folder to go back.
+
+## Trading risk
+
+Trading, especially with leverage, can lose more than you expect. Use paper mode
+or a testnet until you understand how the app behaves with your settings. You are
+responsible for the orders placed on your accounts.
+
+## Support
+
+Report problems through this repository's [Issues](../../issues). Include the app
+version and what you were doing. Do **not** post API keys, licence keys or log
+files that contain them.
